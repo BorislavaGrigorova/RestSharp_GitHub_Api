@@ -7,7 +7,7 @@ using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace TestGitHubApi
+namespace TestGithubApi
 {
     public class Github_Tests
     {
@@ -20,9 +20,9 @@ namespace TestGitHubApi
         public void Setup()
         {
             this.client = new RestClient("https://api.github.com");
-            client.Authenticator = new HttpBasicAuthenticator("IvayloGodu", "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");
+            client.Authenticator = new HttpBasicAuthenticator("{YOUR USER NAME}", "{YOUR TOKEN}");
 
-            string url = "/repos/IvayloGodu/PostManDemo/issues";
+            string url = "/repos/BorislavaGrigorova/Postman/issues";
             this.request = new RestRequest(url);
         }
 
@@ -47,7 +47,7 @@ namespace TestGitHubApi
         {
             var issue = new
             {
-                title = "restsharpissue" + DateTime.Now.Ticks,
+                title = "Missing form" + DateTime.Now.Ticks,
                 id = 123 + DateTime.Now.Ticks,
                 number = 123 + DateTime.Now.Ticks,
             };
